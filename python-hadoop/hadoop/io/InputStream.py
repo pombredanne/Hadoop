@@ -73,9 +73,13 @@ class ByteArrayInputStream(InputStream):
         return data
 
 class FileInputStream(InputStream):
-    def __init__(self, path):
-        self._fd = open(path, 'rb')
-        self._length = os.path.getsize(path)
+    def __init__(self, path_or_fd):
+        if isinstance(path, basestring):
+          self._fd = open(path_or_fd, 'rb')
+          self._length = os.path.getsize(path)
+        else:
+          self._fd = path_or_fd
+
 
     def length(self):
         return self._length
