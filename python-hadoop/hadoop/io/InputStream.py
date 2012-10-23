@@ -74,9 +74,9 @@ class ByteArrayInputStream(InputStream):
 
 class FileInputStream(InputStream):
     def __init__(self, path_or_fd):
-        if isinstance(path, basestring):
+        if isinstance(path_or_fd, basestring):
           self._fd = open(path_or_fd, 'rb')
-          self._length = os.path.getsize(path)
+          self._length = os.path.getsize(path_or_fd)
         else:
           self._fd = path_or_fd
 
