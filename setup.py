@@ -9,6 +9,7 @@ setup(name='Hadoop',
       author='Matteo Bertozzi',
       author_email='theo.bertozzi@gmail.com',
       url='http://hadoop.apache.org',
-      packages=["hadoop", 'hadoop.util', 'hadoop.io', 'hadoop.io.compress']
+      packages=["hadoop", 'hadoop.util', 'hadoop.io', 'hadoop.io.compress'],
+       package_dir = {'': 'python-hadoop'}
      )
 
